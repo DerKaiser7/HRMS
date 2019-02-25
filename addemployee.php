@@ -1,21 +1,11 @@
 <?php
 	include_once 'includes/hrms.inc.php';
 
-	$manager = "";
-	$department = "";
-
 	$sql = "SELECT * FROM hods";
 	$result = mysqli_query($conn, $sql);
 
-	if ($row = mysqli_fetch_assoc($result)) {
-		$managers[] =  array('id' => $row['manager_id'], 'name' => $row['managername']);
-		$departments[] = array('id1' => $row['dept_id'], 'name1' => $row['deptname']);
-		foreach ($result as $row) {
-			$managers[] =  array('id' => $row['manager_id'], 'name' => $row['managername']);
-		}
-		foreach ($result as $row) {
-			$departments[] = array('id1' => $row['dept_id'], 'name1' => $row['deptname']);
-		}
+	while($row = mysqli_fetch_assoc($result)) {
+		$managers[] =  array('id' => $row['manager_id'], 'name' => $row['managername'], 'deptname' => $row['deptname']);
 	}
 ?>
 <!DOCTYPE html>
@@ -48,7 +38,6 @@
 				<h1>Please fill Employee details here</h1>
 			</div>
 	</header>
-
 	<div class="container">
 			<form action="includes/addemployee.inc.php" method="POST">
 				<div class="form-row">
@@ -81,8 +70,8 @@
 						<select name="dept" class="form-control">
 							<option value="select">Choose...</option>
 							
-							<?php foreach ($departments as $dept):?>
-								<option value="<?= $dept['id1'] ?>"> <?= $dept['name1'] ?> </option>
+							<?php foreach ($managers as $dept):?>
+								<option value="<?= $dept['deptname'] ?>"> <?= $dept['deptname'] ?> </option>
 							<?php endforeach; ?>
 
 						</select>
