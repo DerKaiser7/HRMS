@@ -1,27 +1,12 @@
 <?php
 	include_once 'includes/hrms.inc.php';
 
-	$first = "";
-	$last = "";
-	$role = "";
-
 	$sql = "SELECT * FROM users";
 	$result = mysqli_query($conn, $sql);
-
-	if ($row = mysqli_fetch_assoc($result)) {
-		$firsts[] =  array('id' => $row['employee_id'], 'name' => $row['firstname']);
-		$lasts[] = array('id1' => $row['employee_id'], 'name1' => $row['lastname']);
-		$roles[] = array('id2' => $row['dept_id'], 'name2' => $row['jobrole']);
-		foreach ($result as $row) {
-			$firsts[] =  array('id' => $row['employee_id'], 'name' => $row['firstname']);
-		}
-		foreach ($result as $row) {
-			$lasts[] = array('id1' => $row['employee_id'], 'name1' => $row['lastname']);
-		}
-		foreach ($result as $row) {
-			$roles[] = array('id2' => $row['dept_id'], 'name2' => $row['jobrole']);
-		}
+	while($row = mysqli_fetch_assoc($result)) {
+		$users[] =  array('id' => $row['employee_id'], 'fname' => $row['firstname'], 'lname' => $row['lastname'], 'jobrole' => $row['jobrole']);
 	}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -52,28 +37,14 @@
 		    </tr>
 	  	</thead>
 	  	<tbody>
+	  		<?php foreach ($users as $user):?>
 		    <tr>
-		    	<th scope="row">
-		      		<?php foreach ($firsts as $first):?>
-						 <?= $first['id'] ?> 
-					<?php endforeach; ?>
-			  	</th>
-		      	<td>
-		      		<?php foreach ($firsts as $first):?>
-						 <?= $first['name'] ?> 
-					<?php endforeach; ?>
-		      	</td>
-		      	<td>
-		      		<?php foreach ($lasts as $last):?>
-						 <?= $last['name1'] ?> 
-					<?php endforeach; ?>
-		      	</td>
-		      	<td>
-		      		<?php foreach ($roles as $role):?>
-						 <?= $role['name2'] ?> 
-					<?php endforeach; ?>
-		      	</td>
-		    </tr>
+		    	<th scope="row"> <?= $user['id']; ?> </th>
+		      	<td> <?= $user['fname'];?> </td>
+		   		<td> <?= $user['lname'];?> </td>
+		   		<td> <?= $user['jobrole'];?> </td>
+		   	</tr>
+			<?php endforeach; ?>	   
 	  	</tbody>
 	</table>
 <footer>
