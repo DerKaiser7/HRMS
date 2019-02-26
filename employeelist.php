@@ -44,7 +44,7 @@
 		      	<td> <?= $user['fname'];?> </td>
 		   		<td> <?= $user['lname'];?> </td>
 		   		<td> <?= $user['jobrole'];?> </td>
-		   		<td><a href="updatestaff.php">Update</a>||<a href="">Delete</a></td>
+		   		<td><a href="<?php echo 'updatestaff.php?id='.$user['id'] ?>">Update</a>||<a href="">Delete</a></td>
 		   	</tr>
 			<?php endforeach; ?>	   
 	  	</tbody>
