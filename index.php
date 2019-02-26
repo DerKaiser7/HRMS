@@ -29,7 +29,7 @@
   	  	</div>
   	  	<button class="btn btn-lg btn-primary btn-block" name="login-submit" type="submit">Sign in</button>
   	  	<p class="mt-5 mb-3 text-muted"><a href="adminsignup.php">Not a registered admin?</a></p>
- 	  	<p class="mt-5 mb-3 text-muted">&copy; <a href="https://facebook.com/stephenjohnson01">Falodu Stephen Abimbola</a><br> All rights reserved 2019</p>
+ 	  	<p class="mt-5 mb-3 text-muted">&copy; <a href="https://facebook.com/stephenjohnson01" target="_blank">Falodu Stephen Abimbola</a><br> All rights reserved 2019</p>
  	</form>
 
 

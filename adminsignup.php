@@ -19,7 +19,7 @@
 		<label for="inputPassword" class="sr-only">Password</label>
 		<input type="password" name="pwd" id="inputPassword" class="form-control" placeholder="Password">
   	  	<button class="btn btn-lg btn-success btn-block" name="adminsignup-submit" type="submit">Sign up</button>
- 	  	<p class="mt-5 mb-3 text-muted">&copy; <a href="https://facebook.com/stephenjohnson01">Falodu Stephen Abimbola</a><br> All rights reserved 2019</p>
+ 	  	<p class="mt-5 mb-3 text-muted">&copy; <a href="https://facebook.com/stephenjohnson01" target="_blank">Falodu Stephen Abimbola</a><br> All rights reserved 2019</p>
  	</form>
 
 

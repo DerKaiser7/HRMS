@@ -34,6 +34,7 @@
 		      <th scope="col">First Name</th>
 		      <th scope="col">Last Name</th>
 		      <th scope="col">Role</th>
+		      <th scope="col">Edit Staff Details</th>
 		    </tr>
 	  	</thead>
 	  	<tbody>
@@ -43,6 +44,7 @@
 		      	<td> <?= $user['fname'];?> </td>
 		   		<td> <?= $user['lname'];?> </td>
 		   		<td> <?= $user['jobrole'];?> </td>
+		   		<td><a href="updatestaff.php">Update</a>||<a href="">Delete</a></td>
 		   	</tr>
 			<?php endforeach; ?>	   
 	  	</tbody>
@@ -52,7 +54,7 @@
 		<div class="row">
 			<div class="col-lg-12">
 				<a href="">Techland</a> - Copyright ©2019 
-				<a href="https://facebook.com/stephenjohnson01">Falodu Stephen Abimbola</a>. All rights reserved
+				<a href="https://facebook.com/stephenjohnson01" target="_blank">Falodu Stephen Abimbola</a>. All rights reserved
 			</div>
 		</div>
 	</div>
